@@ -1,0 +1,3 @@
+['Human', 'George', 'yar', 'M', 2001, 40]
+('Human', 'George', 'yar', 'M', 2001, 40)
+('Human', 'George', 'yar', 'M', 2001, 40)
