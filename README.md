@@ -7,7 +7,7 @@ class attributes to bytecode, and then write the python version for extra credit
 
 See https://github.com/jrom876/arrStructExample/arrStructExample.c for the C version.
 
-Since then it has evolved into a much larger project to create the framework for an expandable 
+Since then it has evolved into a more ambitious project to create the framework for an expandable 
 person class database written in python and sqlite3 with:
     
     0. a ThisPerson class which defines the methods and attributes of the Person data entity
