@@ -64,15 +64,14 @@ def insertGroupIntoTable(array):
 def deleteAllInDatabase():
     connection = sqlite3.connect("myTable.db")
     crsr = connection.cursor()
-    sql_del_all = """DELETE FROM ThisGroup;"""
-    crsr.execute(sql_del_all)
+    crsr.execute("""DELETE FROM ThisGroup;""")
     connection.commit()
     connection.close()
 
 def displayAllInDatabase():
     connection = sqlite3.connect("myTable.db")
     crsr = connection.cursor()
-    crsr.execute("SELECT * FROM ThisGroup")
+    crsr.execute("SELECT * FROM ThisGroup;")
     ans = crsr.fetchall()
     for i in ans:
         print(i)
@@ -96,7 +95,7 @@ def transferTableIntoGroupList():
     # tfile = gp0.readGroupFromFile()
     connection = sqlite3.connect("myTable.db")
     crsr = connection.cursor()
-    crsr.execute("""SELECT * FROM ThisGroup """)
+    crsr.execute("""SELECT * FROM ThisGroup;""")
     ans = crsr.fetchall()
     for i in ans:
         print(i)
