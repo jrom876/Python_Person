@@ -5,7 +5,7 @@ This project started as an interview programming challenge from a potential empl
 who gave me an hour to create a person struct program in C which could also convert all 
 class attributes to bytecode, and then write the python version for extra credit. 
 
-See https://github.com/jrom876/arrStructExample/arrStructExample.c for the C version.
+See https://github.com/jrom876/arrStructExample/arrStructExample.c for the early C version.
 
 Since then it has evolved into a more ambitious project to create the framework for an expandable 
 person class database written in python and sqlite3 with:
