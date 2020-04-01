@@ -17,7 +17,7 @@ This is the current python version and it has:
     
     0.   ThisPerson class which defines the methods and attributes of the fundamental Person data entity
     1.   ThisGroup class which creates an expandable, iterable and testable array of ThisPerson text objects
-    2.   python .txt to sql database interface for creation and manipulation of a database of ThisPerson objects
+    2.   python .txt to sql database interface for creation and manipulation of a database of ThisPerson text objects
     3.   unittest framework with assertions, searchlists, and iterators for testing all classes
     
 This project is under continual development, and may change at any time.
