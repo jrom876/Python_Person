@@ -73,8 +73,14 @@ class ThisPerson:
         file0.write("{0}\n".format(person.mytuple))
         file0.close()
 
-    def convertPersonToString(self,person):
+    def convertThisPersonToString(self,person):
         strPerson = "(\"%s\", \"%s\", \"%s\", \'%c\', %i, %i)"  % (person.fname,
+        person.lname,person.pword, person.gender,person.id,person.salary)
+        print("strPerson: {0}".format(strPerson))
+        return strPerson
+
+    def convertTPTS(self,person):
+        strPerson = "(%s, %s, %s, %c, %i, %i)"  % (person.fname,
         person.lname,person.pword, person.gender,person.id,person.salary)
         print("strPerson: {0}".format(strPerson))
         return strPerson
@@ -84,7 +90,7 @@ if __name__ == "__main__":
     p0 = ThisPerson("Human","George","yar",'M',2001,40)
     p1 = ThisPerson("H","G","y",'F',10101,140)
     # p0.copyPerson(p1)
-    p1.convertPersonToString(p1)
+    p1.convertThisPersonToString(p1)
     p0.getThisPersonData()
     # p0.writePersonToFile(ThisPerson("H","G","y",'A',2001,40))
     # p0.writePersonToFile(p0)
