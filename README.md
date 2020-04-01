@@ -10,8 +10,8 @@ See https://github.com/jrom876/arrStructExample/arrStructExample.c for the early
 See: https://github.com/jrom876/Person_check for the latest C version.
 
 Since then (three weeks ago as of this writing) it has evolved into this ambitious project 
-to create the frameworks for two person type text-file-to-database converters 
-written in both C and python using sqlite3. 
+to create the frameworks for two person type text-file-to-database converters, with unit testing,
+written in both C and python, using sqlite3. 
 
 This is the current python version and it has:
     
