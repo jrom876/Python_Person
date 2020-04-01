@@ -15,7 +15,7 @@ written in both C and python, using sqlite3.
 
 This is the current python version and it has:
     
-    0.   ThisPerson class which defines the methods and attributes of the fundamental Person data entity
+    0.   ThisPerson class which defines the methods and attributes of the fundamental ThisPerson object
     1.   ThisGroup class which creates an expandable, iterable and testable array of ThisPerson text objects
     2.   .txt file to sql interface for creation and manipulation of a database of ThisPerson text objects
     3.   unittest framework with assertions, searchlists, and iterators for testing all classes
