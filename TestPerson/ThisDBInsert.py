@@ -201,9 +201,9 @@ def getuserInput():
         connection.close()
     elif choice == 5:   # transfer data from text file to database
         transferGroupIntoTable(personSQLArray)
-    elif choice == 55:   # transfer data from text file to database
+    elif choice == 55:   # transfer data from database to text file, incomplete
         transferTableIntoGroupList()
-    elif choice == 555:   # transfer data from text file to database
+    elif choice == 555:   # test
         convertStringToPerson()
 
 # Driver program
