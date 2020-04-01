@@ -77,8 +77,8 @@ def displayAllInDatabase():
         print(i)
     connection.close()
 
-def transferGroupIntoTable(array):
-    gp0 = ThisGroup(array)
+def transferGroupIntoTable():
+    gp0 = ThisGroup()
     tfile = gp0.readGroupFromFile()
     connection = sqlite3.connect("myTable.db")
     crsr = connection.cursor()
@@ -200,7 +200,7 @@ def getuserInput():
         connection.commit()
         connection.close()
     elif choice == 5:   # transfer data from text file to database
-        transferGroupIntoTable(personSQLArray)
+        transferGroupIntoTable()
     elif choice == 55:   # transfer data from database to text file, incomplete
         transferTableIntoGroupList()
     elif choice == 555:   # test
