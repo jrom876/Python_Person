@@ -8,7 +8,7 @@ class attributes to bytecode, and then write the python version for extra credit
 See https://github.com/jrom876/arrStructExample/arrStructExample.c for the early C version.
 
 Since then (three weeks ago as of this writing) it has evolved into this ambitious project 
-to create the frameworks for two expandable person-class text-file-to-database converters 
+to create the frameworks for two person-class text-file-to-database converters 
 written in both C and python using sqlite3. 
 
 This is the current python version and it has:
