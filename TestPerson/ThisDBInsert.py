@@ -30,7 +30,7 @@ table_name = ThisGroup
 seedarray = [seedperson,blankMan,dudeMan]
 
 personSQLArray = [ ("Yari","Koznow","vodka",'F',65517,61),
-        ("blankman","nunya","nada",'_',7,0),
+        ("blankMan","nunya","nada",'_',7,0),
         ("Charlie","Zulu","whiskey",'M',7777,25),
         ("Steve","Koz","yuno",'M',1942,55),
         ("James","Bond","scotch","U",1027,47) ]
@@ -77,7 +77,7 @@ def displayAllInDatabase():
         print(i)
     connection.close()
 
-def transferGroupIntoTable():
+def transferGroupTextIntoTable():
     gp0 = ThisGroup()
     tfile = gp0.readGroupFromFile()
     connection = sqlite3.connect("myTable.db")
@@ -89,122 +89,119 @@ def transferGroupIntoTable():
     connection.commit()
     connection.close()
 
-## Construction Zone ## 
 def transferTableIntoGroupList():
-    # p0 = ThisPerson()
-    # tfile = gp0.readGroupFromFile()
     connection = sqlite3.connect("myTable.db")
     crsr = connection.cursor()
     crsr.execute("""SELECT * FROM ThisGroup;""")
     ans = crsr.fetchall()
-    for i in ans:
-        print(i)
-        # convertStringToPerson(i)
-        # p0 = ThisPerson(i)
-        # print(p0.mytuple)
-        for j in i:
-            print(j)
-            # p0.copyPerson(i)
+    convertSQLToPersonArray(ans)
     connection.close()
 
-def convertStringToPerson():
-    p0 = ThisPerson(blankMan)
-    # res = p0.convertThisPersonToString(p0)
-    res = str(p0.myperson)
-    # pa = res.split(', ')
-    print(res)
-    # return pa
-## End of Construction Zone ##
+def transferPersonIntoGroupList(pid):
+    connection = sqlite3.connect("myTable.db")
+    crsr = connection.cursor()
+    crsr.execute("""SELECT * FROM ThisGroup WHERE id=%s;""" % (pid))
+    ans = crsr.fetchall()
+    convertSQLToPerson(ans)
+    connection.close()
 
-        
+def convertSQLToPersonArray(per):
+    result = []
+    for i in per:
+        # print(i)
+        p0 = ThisPerson()
+        for j in i:
+            # print(j)
+            p0.setThisPersonData(i[0],i[1],i[2],i[3],i[4],i[5])
+        print("Convert str to person: {0}".format(p0.mytuple))
+        result.append(p0)
+    # print(p0.mytuple)
+    return result
+
+
+def convertSQLToPerson(sql):
+    p0 = ThisPerson()
+    for j in sql:
+        # print(j)
+        p0.setThisPersonData(sql[0],sql[1],sql[2],sql[3],sql[4],sql[5])
+    print("Convert sql to person: {0}".format(p0.mytuple))
+    return p0
+############################################
+
+def insertPersonIntoTable(per):
+    strobj = convertPersonToString(per)
+    connection = sqlite3.connect("myTable.db")
+    crsr = connection.cursor()
+    sql_insert = """INSERT INTO ThisGroup (fname, lname, pword, gender, id, salary)
+                VALUES %s;""" % (strobj)
+    crsr.execute(sql_insert)
+    connection.commit()
+    connection.close()
+
+def deletePersonFromTable(per):
+    connection = sqlite3.connect("myTable.db")
+    crsr = connection.cursor()
+    sql_del = """DELETE FROM ThisGroup WHERE id = %i;""" % (per.id)
+    crsr.execute(sql_del)
+    connection.commit()
+    connection.close()
+
+def cloneHumanFromKeybd():
+    fn = input("Enter first name: ")
+    ln = input("Enter last name: ")
+    pw = input("Enter pw: ")
+    gr = input("Enter gender: ")
+    id = input("Enter id: ")
+    sal = input("Enter salary: ")
+    p1 = ThisPerson(fn, ln, pw, gr, int(id), int(sal))
+    # print("person:\t {0}".format(p1.mytuple)) ## DBPRINT
+    return p1
+
 ############################################
 ### User Interface ###
 def getuserInput():
-    print("1 = insert dudeMan       11 = delete dudeMan             111 = delete all from table")
-    print("2 = insert stevo         22 = delete stevo               222 = fetch all from table")
-    print("3 = insert blankMan      33 = delete blankMan")
-    print("4 = insert seedperson    44 = delete seedperson\n")
+    print("111 = delete all from table")
+    print("222 = fetch all from table")
+    print("333 = insert Person into table")
+    print("444 = insert group into table")
+    print("555 = experimental")
+    print("1 = insert dudeMan           11 = delete dudeMan")
+    print("2 = insert stevo             22 = delete stevo")
+    print("3 = insert blankMan          33 = delete blankMan")
+    print("4 = insert seedperson        44 = delete seedperson")
+    print("5 = transfer group to db     55 = transfer db to group\n")
     choice = int(input("Choose from the list:\t"))
-
+    # print("\n")
     if choice == 1: # insert dudeMan
-        strdm = convertPersonToString(dudeMan)
-        connection = sqlite3.connect("myTable.db")
-        crsr = connection.cursor()
-        sql_insert = """INSERT INTO ThisGroup (fname, lname, pword, gender, id, salary)
-                    VALUES %s;""" % (strdm)
-        crsr.execute(sql_insert)
-        connection.commit()
-        connection.close()
+        insertPersonIntoTable(dudeMan)
     elif choice == 11:  # delete dudeMan
-        # obj = ThisPerson(dudeMan)
-        connection = sqlite3.connect("myTable.db")
-        crsr = connection.cursor()
-        sql_del = """DELETE FROM ThisGroup WHERE id = %i;""" % (dudeMan.id)
-        crsr.execute(sql_del)
-        connection.commit()
-        connection.close()
+        deletePersonFromTable(dudeMan)
     elif choice == 111: # delete all
         deleteAllInDatabase()
     elif choice == 2:   # insert stevo
-        strobj = convertPersonToString(stevo)
-        connection = sqlite3.connect("myTable.db")
-        crsr = connection.cursor()
-        sql_insert = """INSERT INTO ThisGroup (fname, lname, pword, gender, id, salary)
-                    VALUES %s;""" % (strobj)
-        crsr.execute(sql_insert)
-        connection.commit()
-        connection.close()
+        insertPersonIntoTable(stevo)
     elif choice == 22:  # delete stevo
-        # obj = ThisPerson(dudeMan)
-        connection = sqlite3.connect("myTable.db")
-        crsr = connection.cursor()
-        sql_del = """DELETE FROM ThisGroup WHERE id = %i;""" % (stevo.id)
-        crsr.execute(sql_del)
-        connection.commit()
-        connection.close()
+        deletePersonFromTable(stevo)
     elif choice == 222: # display all in database
         displayAllInDatabase()
     elif choice == 3:   # insert blankMan
-        strobj = convertPersonToString(blankMan)
-        connection = sqlite3.connect("myTable.db")
-        crsr = connection.cursor()
-        sql_insert = """INSERT INTO ThisGroup (fname, lname, pword, gender, id, salary)
-                    VALUES %s;""" % (strobj)
-        crsr.execute(sql_insert)
-        connection.commit()
-        connection.close()
+        insertPersonIntoTable(blankMan)
     elif choice == 33:   # delete blankMan
-        # obj = ThisPerson(dudeMan)
-        connection = sqlite3.connect("myTable.db")
-        crsr = connection.cursor()
-        sql_del = """DELETE FROM ThisGroup WHERE id = %i;""" % (blankMan.id)
-        crsr.execute(sql_del)
-        connection.commit()
-        connection.close()
+        deletePersonFromTable(blankMan)
     elif choice == 333: #insert group into myTable.db
+        insertPersonIntoTable(cloneHumanFromKeybd())
+    elif choice == 4:   # insert seedperson
+        insertPersonIntoTable(seedperson)
+    elif choice == 44:  # delete seedperson
+        deleteSeedPerson(seedperson)
+    elif choice == 444: #insert group into myTable.db
         insertGroupIntoTable(seedarray)
-    elif choice == 4:
-        strobj = convertPersonToString(seedperson)
-        connection = sqlite3.connect("myTable.db")
-        crsr = connection.cursor()
-        sql_insert = """INSERT INTO ThisGroup (fname, lname, pword, gender, id, salary)
-                    VALUES %s;""" % (strobj)
-        crsr.execute(sql_insert)
-        connection.commit()
-        connection.close()
-    elif choice == 44:
-        connection = sqlite3.connect("myTable.db")
-        crsr = connection.cursor()
-        sql_del = """DELETE FROM ThisGroup WHERE id = %i;""" % (seedperson.id)
-        crsr.execute(sql_del)
-        connection.commit()
-        connection.close()
-    elif choice == 5:   # transfer data from text file to database
-        transferGroupIntoTable()
-    elif choice == 55:   # transfer data from database to text file, incomplete
+    elif choice == 5:   # transfer from text file to database
+        transferGroupTextIntoTable()
+    elif choice == 55:   # transfer from database to text file
         transferTableIntoGroupList()
-    elif choice == 555:   # test
-        convertStringToPerson()
+    elif choice == 555:   # experimental
+        transferPersonIntoGroupList(1098)
 
 # Driver program
 if __name__ == "__main__":
