@@ -7,8 +7,6 @@ This is similar to the classic struct person program that every computer science
 at one time or another. So I wrote the first struct Person program, then later I expanded their requirements to 
 include both C and python versions of a robust .txt object to sql converter. That is the genesis of this project.
 
-See https://github.com/jrom876/arrStructExample/arrStructExample.c for the early C version.
-
 See: https://github.com/jrom876/Person_check for the latest C version.
 
 Since then (three weeks ago as of this writing) the python version has evolved into this ambitious project 
