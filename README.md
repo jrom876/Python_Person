@@ -1,9 +1,9 @@
 # TestPerson
 Python code to create person, group, and unittest classes, with an sql database interface
 
-This project started as an interview programming challenge from a potential employer 
-who gave me an hour to create a person struct program in C which could also convert all 
-class attributes to bytecode, and then write the python version for extra credit. 
+This project started as an interview programming challenge from a potential employer who gave me an hour to create a struct program in C with at least one string, one char, one int, and one short int which would also convert all outputs to bytecode, and then write the python version for extra credit.
+
+This is similar to the classic struct person program that every computer science student has done at one time or another. So, just for kicks, I later expanded their requirements to include both C and python versions of a robust .txt object to sql converter, and started this project.
 
 See https://github.com/jrom876/arrStructExample/arrStructExample.c for the early C version.
 
@@ -20,5 +20,5 @@ This is the current python version and it has:
     2.   .txt file to sql interface for creation and manipulation of a database of ThisPerson text objects
     3.   unittest framework with assertions, searchlists, and iterators for testing all classes
     
-This project is under continual development, and may change at any time.
+This project is under continuous development, and may change at any time.
 
