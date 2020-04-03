@@ -19,7 +19,7 @@ from random import *
 from ThisGroup import *
 from ThisPerson import *
 
-seedperson = ThisPerson("Yari","Koznow","vodka",'F',65500,61)
+seedperson = ThisPerson("Yari","Koznow","vodka",'M',65500,61)
 blankMan = ThisPerson("blankman","nunya","nada",'_',0,0)
 dudeMan = ThisPerson("Charlie","Zulu","whiskey",'M',7077,25)
 stevo = ThisPerson("Steve","Koz","yuno",'M',1042,59)
