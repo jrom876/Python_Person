@@ -57,7 +57,9 @@ class TestPerson(unittest.TestCase):
 
     def testPerAttr(self):
 
-        ### Instantiate test modules and put them in a list
+        ###############################################################################
+        ############## Instantiate test modules and put them in a list ################
+        
         p0 = ThisPerson("Yari","Koznow","vodka",'F',65500,61)
         p1 = ThisPerson("Homer1","Simpson1","mmmbeer",'M',1009,47)
         p2 = ThisPerson("Yert","Stanis","rum",'F',64000,43)
