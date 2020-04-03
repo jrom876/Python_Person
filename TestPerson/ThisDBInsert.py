@@ -29,7 +29,7 @@ table_name = ThisGroup
 
 seedarray = [seedperson,blankMan,dudeMan]
 
-personSQLArray = [ ("Yari","Koznow","vodka",'F',65517,61),
+personSQLArray = [ ("Yari","Koznow","vodka",'M',65517,61),
         ("blankMan","nunya","nada",'_',7,0),
         ("Charlie","Zulu","whiskey",'M',7777,25),
         ("Steve","Koz","yuno",'M',1942,55),
