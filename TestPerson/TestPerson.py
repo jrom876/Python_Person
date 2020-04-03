@@ -112,12 +112,12 @@ class TestPerson(unittest.TestCase):
         # print("Person p4 initialized to: \t{0}\n".format(parr[4].myperson))
         # print("Person p5 initialized to: \t{0}\n".format(parr[5].myperson))
 
-        ## alter Person p0 (Yari) so he can pass the assertions below
+        ### Alter Person p0 (Yari) so he can pass the assertions below
         # p0.setThisPersonData("Homer","Simpson","beer",p0.gender,p0.id+256,p0.salary)
         # p0.setThisPersonData("Homer","Simpson")
         # print("\nPerson p0 altered to: \t{0}\n".format(p0.myperson))
 
-        # alter Person p2 (Yert) so he can pass the assertions below
+        ### Alter Person p2 (Yert) so he can pass the assertions below
         # p2.copyPerson(stevo)
         # p2.setThisPersonData("Steve","Koz","yuno",p2.gender,p2.id,p2.salary)
         # print("Person p2 altered to: \t{0}\n".format(p2.myperson))
