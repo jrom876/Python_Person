@@ -9,7 +9,7 @@ include both C and python versions of a robust .txt object to sql converter. Tha
 
 See: https://github.com/jrom876/Person_check for the latest C version.
 
-Since then (three weeks ago as of this writing) the python version has evolved into this ambitious project 
+Since then (three weeks ago as of this writing) the python version has evolved into this project 
 which creates the framework for a Person-class .txt file to database converter with unit testing, using sqlite3. 
 
 The current python version has:
