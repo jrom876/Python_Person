@@ -10,13 +10,13 @@ include both C and python versions of a robust .txt object to sql converter. Tha
 See: https://github.com/jrom876/Person_check for the latest C version.
 
 Since then (three weeks ago as of this writing) the python version has evolved into this project 
-which creates the framework for a Person-class .txt file to database converter with unit testing, using sqlite3. 
+which creates the framework for a Person-class text file to database converter with unit testing, using sqlite3. 
 
 The current python version has:
     
     0.   ThisPerson class which defines the methods and attributes of the fundamental ThisPerson object
     1.   ThisGroup class which creates an expandable, iterable and testable array of ThisPerson text objects
-    2.   .txt file to sql interface for creation and manipulation of a database of ThisPerson text objects
+    2.   text file to sql interface for creation and manipulation of a database of ThisPerson text objects
     3.   unittest framework with assertions, searchlists, and iterators for testing all classes
     
 This project is under continuous development, and may change at any time.
