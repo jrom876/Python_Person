@@ -80,6 +80,9 @@ class TestPerson(unittest.TestCase):
 
         ########################################################################
         ################### Start the Test Battery #############################
+        
+        ## Throughout this test battery, you need only comment in or out the test(s)
+        ## you want to run.
 
         ### Create, clone and modify test arrays
         self.printGroup(parr)
@@ -94,7 +97,7 @@ class TestPerson(unittest.TestCase):
         # cg1 = self.cloneGroup(tg1.perlist)
 
         ###########################################
-        ### Iteration Tests
+        ### Iteration Tests 
         # self.iterateOverPersonArray()
         # self.iterateOverPersonList()
         # self.iterateOverMainItems()
