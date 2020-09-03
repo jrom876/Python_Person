@@ -39,7 +39,7 @@ from ThisGroup import *
 from ThisPerson import *
 
 ## globals for testing
-parr = [] ## A blank array that we will soon instantiate with person test objects
+parr = [] ## A blank array that we will soon instantiate with ThisPerson test objects
 seedperson = ThisPerson("Yari","Koznow","vodka",'F',65500,61)
 blankMan = ThisPerson("blankman","nunya","nada",'_',0,0)
 dudeMan = ThisPerson("Charlie","Zulu","whiskey",'M',7007,25)
