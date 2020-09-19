@@ -9,7 +9,7 @@ So I wrote and tested this program right then in 48 minutes, and it worked so we
 
 That is the genesis of this project.
 
-See: https://github.com/jrom876/Person_check for the latest C version.
+See: https://github.com/jrom876/Person_struct for the latest C version.
 
 Since then the python version has evolved into the framework for a Person-class text file to database converter with unit testing, using sqlite3. 
 
