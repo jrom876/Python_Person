@@ -5,7 +5,7 @@ This project started as an interview programming challenge from a potential empl
 
 This is similar to the classic struct person program that every computer science student has done at one time or another.
 
-So I wrote and tested this program right then in 48 minutes, and it worked so well that I later expanded the requirements to include both C and python versions of a text object to sql converter.
+So I wrote and tested the first part of this program right then in 48 minutes, and it worked so well that I later expanded the requirements to include both C and python versions of a text object to sql converter.
 
 That is the genesis of this project.
 
