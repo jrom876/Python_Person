@@ -14,7 +14,7 @@ from printName import *
 from TestPerson import *
 from ThisPerson import *
 
-seedperson = ThisPerson("Yari","Koznow","vodka",'Z',65500,61)
+seedperson = ThisPerson("Yari","Koznow","victor",'Z',65500,61)
 blankMan = ThisPerson("blankman","nunya","nada",'_',0,0)
 dudeMan = ThisPerson("Charlie","Zulu","Whiskey",'U',7007,25)
 seedarray = [seedperson,blankMan,dudeMan]
