@@ -40,16 +40,16 @@ from ThisPerson import *
 
 ## globals for testing
 parr = [] ## A blank array that we will soon instantiate with ThisPerson test objects
-seedperson = ThisPerson("Yari","Koznow","vodka",'F',65500,61)
+seedperson = ThisPerson("Yari","Koznow","victor",'F',65500,61)
 blankMan = ThisPerson("blankman","nunya","nada",'_',0,0)
 dudeMan = ThisPerson("Charlie","Zulu","whiskey",'M',7007,25)
 stevo = ThisPerson("Steve","Koz","yuno",'M',1042,59)
-jb = ThisPerson("James","Bond","scotch","U",1007,47)
+jb = ThisPerson("James","Bond","secret","U",1007,47)
 
 ## Master lists for screening
 fnlist = ["James","Homer","Homer1","Steve","Yari","Yert"]
 lnlist = ["Bond","Koz","Koznow","Simpson","Simpson1","Stanis"]
-pwlist = ["beer","gin","kahlua","mmmbeer","nada","rum","scotch","tequila","vodka","yuno"]
+pwlist = ["bravo","golf","kilo","mike","nada","romeo","secret","tango","victor","yuno"]
 grlist = ['M','F','_','U']
 idlist = [0,3,1007,1008,1009,1010,1042,1091,1096,1097,1098,64000,65500]
 
@@ -60,17 +60,17 @@ class TestPerson(unittest.TestCase):
         ###############################################################################
         ############## Instantiate test modules and put them in a list ################
         
-        p0 = ThisPerson("Yari","Koznow","vodka",'F',65500,61)
-        p1 = ThisPerson("Homer1","Simpson1","mmmbeer",'M',1009,47)
-        p2 = ThisPerson("Yert","Stanis","rum",'F',64000,43)
-        p3 = ThisPerson("Testo","Scripto","tequila",'M',1096,49)
+        p0 = ThisPerson("Yari","Koznow","victor",'F',65500,61)
+        p1 = ThisPerson("Homer1","Simpson1","mike",'M',1009,47)
+        p2 = ThisPerson("Yert","Stanis","romeo",'F',64000,43)
+        p3 = ThisPerson("Testo","Scripto","tango",'M',1096,49)
         p4 = self.cloneHuman(jb)
         p5 = self.cloneHuman(stevo)
         p6 = self.cloneHuman(dudeMan)
-        p7 = ThisPerson("James","Bond","gin","U",1007,47)
+        p7 = ThisPerson("James","Bond","golf","U",1007,47)
         p8 = self.cloneHuman(blankMan)
         p9 = ThisPerson()
-        p10 = ThisPerson("Testo","Scripto","kahlua",'M',1098,49)
+        p10 = ThisPerson("Testo","Scripto","kilo",'M',1098,49)
         # p4 = self.cloneHumanFromKeybd()
         # p5 = self.cloneHumanFromKeybd()
         # p0.copyPerson(p4)
@@ -116,7 +116,7 @@ class TestPerson(unittest.TestCase):
         # print("Person p5 initialized to: \t{0}\n".format(parr[5].myperson))
 
         ### Alter Person p0 (Yari) so he can pass the assertions below
-        # p0.setThisPersonData("Homer","Simpson","beer",p0.gender,p0.id+256,p0.salary)
+        # p0.setThisPersonData("Homer","Simpson","bravo",p0.gender,p0.id+256,p0.salary)
         # p0.setThisPersonData("Homer","Simpson")
         # print("\nPerson p0 altered to: \t{0}\n".format(p0.myperson))
 
@@ -315,8 +315,8 @@ class TestPerson(unittest.TestCase):
                     for i in idlist:
                         tp = ThisPerson(f,l,p,'X',i,100)
                         print("{0}".format(tp.mytuple))
-                        # self.assertFalse(((tp.id == 64000)&(tp.pword == "rum")&((tp.fname == "Yert")&(tp.lname == "Stanis"))),"That's Yert")
-                        # self.assertFalse(((tp.id == 1007)&(tp.pword == "scotch")&((tp.fname == "James")&(tp.lname == "Bond"))),"Bond. James Bond.")
+                        # self.assertFalse(((tp.id == 64000)&(tp.pword == "romeo")&((tp.fname == "Yert")&(tp.lname == "Stanis"))),"That's Yert")
+                        # self.assertFalse(((tp.id == 1007)&(tp.pword == "secret")&((tp.fname == "James")&(tp.lname == "Bond"))),"Bond. James Bond.")
 
     def iterateOverPersonList(self):
         for f in fnlist:
@@ -326,8 +326,8 @@ class TestPerson(unittest.TestCase):
                         for i in idlist:
                             tp = ThisPerson(f,l,p,g,i,47)
                             print("{0}".format(tp.mytuple))
-                            self.assertFalse(((tp.id == 64000)&(tp.pword == "rum")&((tp.fname == "Yert")&(tp.lname == "Stanis"))),"That's Yert")
-                            self.assertFalse(((tp.gender == 'U')&(tp.id == 1007)&(tp.pword == "scotch")&((tp.fname == "James")&(tp.lname == "Bond"))),"Bond. James Bond.")
+                            self.assertFalse(((tp.id == 64000)&(tp.pword == "romeo")&((tp.fname == "Yert")&(tp.lname == "Stanis"))),"That's Yert")
+                            self.assertFalse(((tp.gender == 'U')&(tp.id == 1007)&(tp.pword == "secret")&((tp.fname == "James")&(tp.lname == "Bond"))),"Bond. James Bond.")
 
     def iterateOverPersonArray(self):
         # personArray = [[i] for i in parr]
