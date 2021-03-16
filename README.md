@@ -1,5 +1,5 @@
 # Python_Person
-Python code to create person, group, and unittest classes, with an sql database.
+Python framework to create person, group, and unittest classes, with an sql database.
 
 This project started as an interview programming challenge.
 
